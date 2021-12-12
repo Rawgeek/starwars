@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Prefetch DNS for external assets. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+  </head>
+  <body>
+    
+    <template>
+        <div class="post">
+          <div v-if="loading" class="loading">
+            Loading...
+          </div>
+      
+          <div v-if="error" class="error">
+            {{ error }}
+          </div>
+      
+          <div v-if="post" class="content">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.body }}</p>
+          </div>
+        </div>
+      </template>
+
+    <script src="{% static 'app.js' %}"></script>
+  </body>
+  
+</html>
+
+

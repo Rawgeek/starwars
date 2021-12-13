@@ -6,7 +6,7 @@ verify_ssl = true
 [packages]
 django = "==3.2.9"
 djangorestframework = "==3.12.4"
-django-webpack-loader = "*"
+django-webpack-loader = "==0.7.0"
 django-extensions = "==3.1.5"
 requests = "==2.26.0"
 petl = "*"

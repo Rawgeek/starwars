@@ -4,7 +4,7 @@ from .models import SWCharacter
 from .services import parse_csv_with_characters
 
 class SWCharacterSerializer(serializers.ModelSerializer):
-    name = serializers.CharField(source='file.name')
+    name = serializers.CharField(source='file.name', required=False)
 
     class Meta:
         fields = (

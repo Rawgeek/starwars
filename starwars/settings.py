@@ -184,3 +184,23 @@ WEBPACK_LOADER = {
 
 # ENVS
 SWAPI_URL = os.environ.get('SWAPI_URL', "https://swapi.dev/api/")
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        # 'django.db.backends': {
+        #     'level': 'DEBUG',
+        #     'handlers': ['console'],
+        # },
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+        },
+    },
+}

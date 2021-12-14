@@ -1,4 +1,11 @@
+from datetime import datetime
 from rest_framework import serializers
+
+class SimpleDateField(serializers.CharField):
+    def to_representation(self, value):
+        parsed = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%fZ")
+        return parsed.strftime('%Y-%m-%d')
+        
 
 class CharactersSerializer(serializers.Serializer):
     name = serializers.CharField()
@@ -10,5 +17,5 @@ class CharactersSerializer(serializers.Serializer):
     birth_year = serializers.CharField()
     gender = serializers.CharField()
     homeworld = serializers.CharField(source='homeworld.name')
-    date = serializers.DateTimeField(source='created')
+    date = SimpleDateField(source='edited')
 

@@ -56,7 +56,8 @@ class SWAPIClient:
 
     def get(self, url, params=None, parse=True):
         response = requests.request('get', url, params=params)
-        logger.info(url, response)
+        # logger.info(url, params, response)
+        print(url, params, response)
         if response.status_code is not status.HTTP_200_OK:
             raise Exception("Error while fetching %s, status code %s", url, response.status_code)
         if parse:
@@ -68,14 +69,14 @@ class SWAPIClient:
         data = self.get_from_cache(resource_path, id)
         if data:
             return data
-        url = "{}/{}/{}".format(self._base_url, resource_path, id)
+        url = "{}{}/{}".format(self._base_url, resource_path, id)
         data = self.get(url)
         if self._enable_cache:
             self._store_cache(data.get('url'), data)
         return data
         
     def get_all(self, resource_path, params=None):
-        url = "{}/{}/".format(self._base_url, resource_path)
+        url = "{}{}/".format(self._base_url, resource_path)
         data = self.get(url, params)
 
         if 'results' in data and self._download_all and data.get('next'):

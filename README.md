@@ -18,6 +18,7 @@ python@3.9.7
 $ git clone git@github.com:rawgeek/starwars.git
 $ cd starwars
 $ nvm install
+$ cd assets
 $ npm install
 ```
 
@@ -48,12 +49,11 @@ $ pyenv install
 $ pipenv install --dev
 $ pipenv shell
 $ ./manage.py migrate
-$ ./manage.py createsuperuser
 $ ./manage.py runserver
 
 ```
 
-Go to http://localhost:8000 for user view and http://localhost:8000/admin/ for admin view
+Go to http://localhost:8000
 
 ## Unit Tests
 ```
@@ -61,4 +61,6 @@ $ python manage.py test
 ```
 
 ## TODO / Known Issues
-
+* Add Unit tests for Frontend
+* Frontend cleanup and restructuring, add error handling
+* Async process for downloading from multiple pages

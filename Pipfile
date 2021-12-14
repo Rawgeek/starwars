@@ -10,11 +10,11 @@ django-webpack-loader = "==0.7.0"
 django-extensions = "==3.1.5"
 requests = "==2.26.0"
 petl = "*"
-numpy = "*"
 
 [dev-packages]
 factory-boy = "*"
 ipython = "*"
+freezegun = "*"
 
 [requires]
 python_full_version = "3.9.7"

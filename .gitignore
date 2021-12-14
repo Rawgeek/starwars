@@ -108,3 +108,4 @@ celerybeat-schedule
 #local_settings
 .env
 db.sqlite3
+webpack-stats.json

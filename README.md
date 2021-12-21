@@ -3,6 +3,8 @@
 App which allows you to collect, resolve and inspect information about characters
 in the Star Wars universe from the [SWAPI](https://swapi.co/api/people/)
 
+[Python Challenge.pdf](Documentation)
+
 ## Setup
 ```
 node@17.0.1
